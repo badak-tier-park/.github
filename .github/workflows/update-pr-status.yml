@@ -1,0 +1,34 @@
+name: 🔄 Update PR Status in README
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    # .github 리포지토리 자신에서만 실행
+    if: github.repository == format('{0}/.github', github.repository_owner)
+
+    permissions:
+      contents: write   # README commit/push 권한
+
+    steps:
+      - name: ⬇️ Checkout .github repo
+        uses: actions/checkout@v4
+
+      - name: 🔍 Fetch PRs & Update README
+        env:
+          GH_TOKEN: ${{ secrets.ORG_PR_TOKEN }}  # Fine-grained PAT (아래 권한 설명 참고)
+          ORG_NAME: ${{ github.repository_owner }}
+        run: node update_readme.js
+
+      - name: 💾 Commit & Push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          # 변경사항 없으면 커밋 스킵
+          git diff --staged --quiet && echo "변경 없음 – 스킵" && exit 0
+          git commit -m "chore: update open PR status [skip ci]"
+          git push
