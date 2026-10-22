@@ -1,6 +1,7 @@
 name: 🙋 기타 문의
 description: 버그나 기능 제안 외에 하고 싶은 말이 있다면 여기에!
 title: "etc: "
+type: Task
 body:
   - type: textarea
     id: what

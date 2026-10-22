@@ -2,6 +2,7 @@ name: 🐛 버그 제보
 description: 버그를 발견하셨나요? 알려주시면 빠르게 고칠게요!
 title: "bug: "
 labels: [bug]
+type: Bug
 body:
   - type: textarea
     id: what

@@ -8,6 +8,9 @@
   항목은 그 저장소의 `.github/`에 따로 둔다
 - 이슈 폼의 `labels`는 **그 저장소에 같은 이름의 라벨이 있을 때만** 붙는다. 폼에 라벨을 추가하면 저장소마다
   라벨이 있는지 확인한다(예: `hotfix`는 badak-web에만 있다)
+- 이슈 폼은 **이슈 타입**(조직 설정)과 **종류 라벨**을 함께 붙인다. 짝은 조직 전체에서 고정이다:
+  Feature↔`enhancement`, Bug↔`bug`, Hotfix↔`hotfix`, Style↔`style`, Refactor↔`refactor`, Docs↔`documentation`,
+  Task↔(종류 라벨 없음). PR은 제목 타입으로 같은 라벨을 쓰고 배포 PR(`dev`→`main`)은 `release`
 - PR 템플릿은 `gh pr create --body`로 만들면 자동 적용되지 않는다. 각 저장소 CLAUDE.md는 이 파일을
   `gh api repos/badak-tier-park/.github/contents/.github/PULL_REQUEST_TEMPLATE.md`로 가져와 구조를 맞추게 돼 있다 —
   섹션 이름을 바꾸면 그쪽 문서 서술도 확인한다
