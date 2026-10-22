@@ -1,0 +1,44 @@
+name: 🚨 긴급 수정 요청
+description: 즉시 처리가 필요한 심각한 문제를 신고해주세요!
+title: "hotfix: "
+labels: [hotfix]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 🚨 어떤 긴급 문제인가요?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: ⚡ 왜 긴급한가요?
+      description: 예 - 서비스 전체 중단, 진행 중인 경기 판정 오류, 데이터 손실 위험, 보안 문제
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 🔁 재현 방법
+      placeholder: |
+        1. '...' 로 이동
+        2. '...' 클릭
+        3. 오류 확인
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 💥 현재 영향 범위
+      description: 예 - 전체 사용자, 특정 리그, 휴대폰만
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📸 스크린샷 / 로그
+  - type: textarea
+    id: workaround
+    attributes:
+      label: 🛠️ 임시 해결책
+      description: 알고 있는 임시 해결 방법이 있다면 알려주세요. (선택사항)

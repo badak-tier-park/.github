@@ -1,0 +1,14 @@
+name: 🙋 기타 문의
+description: 버그나 기능 제안 외에 하고 싶은 말이 있다면 여기에!
+title: "etc: "
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 📝 어떤 내용인가요?
+    validations:
+      required: true
+  - type: textarea
+    id: etc
+    attributes:
+      label: 💬 추가 정보
