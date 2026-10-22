@@ -2,6 +2,7 @@ name: 🚨 긴급 수정 요청
 description: 즉시 처리가 필요한 심각한 문제를 신고해주세요!
 title: "hotfix: "
 labels: [hotfix]
+type: Hotfix
 body:
   - type: textarea
     id: what

@@ -2,6 +2,7 @@ name: 💡 기능 제안
 description: 새로운 아이디어가 있으신가요? 편하게 제안해주세요!
 title: "feat: "
 labels: [enhancement]
+type: Feature
 body:
   - type: textarea
     id: problem
